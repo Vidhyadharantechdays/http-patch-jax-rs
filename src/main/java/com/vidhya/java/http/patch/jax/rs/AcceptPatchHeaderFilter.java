@@ -23,8 +23,8 @@
  */
 package com.vidhya.java.http.patch.jax.rs;
 
-import com.sun.istack.internal.logging.Logger;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.ws.rs.HttpMethod;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -44,7 +44,7 @@ import javax.ws.rs.ext.Provider;
 public class AcceptPatchHeaderFilter implements ContainerResponseFilter {
 
     private static final String ACCEPT_PATCH_HEADER = "Accept-Patch";
-    Logger logger = Logger.getLogger(AcceptPatchHeaderFilter.class);
+    static final Logger logger = Logger.getLogger(AcceptPatchHeaderFilter.class.getName());
 
     @Override
     public void filter(final ContainerRequestContext requestContext, final ContainerResponseContext responseContext)
