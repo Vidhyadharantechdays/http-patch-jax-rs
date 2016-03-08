@@ -61,11 +61,14 @@ public class PersonResource {
                 + "    </head>\n"
                 + "    <body>\n"
                 + "        <h1> Welcome to HTTP PATCH demo </h1>\n"
-                + "<h4> The latest is <h3> " + entityStorage.getPerson() + "</h3> </h4>"
+                + "<h4> The latest is <h3> "+ 
+                entityStorage.getPerson().toString()
+                + "</h3> </h4>"
                 + "    </body>\n"
                 + "</html>";
     }
     
+    @Path("/person")
     @javax.ws.rs.GET
     @Consumes(MediaType.APPLICATION_JSON)
     public Person getPerson() {
@@ -76,12 +79,14 @@ public class PersonResource {
      * PUT method for updating an instance of PersonResource
      * @param person representation for the resource
      */
+    @Path("/person")
     @PUT
     @Consumes({"application/xml", "application/json"})
     public void setPerson(Person person) {
         entityStorage.setPerson(person);
     }
     
+    @Path("/person")
     @PATCH
     @Consumes(Patching.PATCH_MEDIA_TYPE)
     public Person patchPerson(Person person) {
@@ -89,3 +94,4 @@ public class PersonResource {
         return entityStorage.getPerson();
     }
 }
+

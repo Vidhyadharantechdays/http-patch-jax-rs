@@ -24,6 +24,7 @@
 package com.vidhya.java.http.patch.jax.rs.entity;
 
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -44,6 +45,7 @@ public class Person {
 //    @Pattern(regexp=".+@.+\\.[a-z]+", message="Invalid email address!")
     private String email;
 
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -52,6 +54,7 @@ public class Person {
         this.name = name;
     }
 
+    @XmlElement
     public Integer getAge() {
         return age;
     }
@@ -60,6 +63,7 @@ public class Person {
         this.age = age;
     }
 
+    @XmlElement
     public String getLocale() {
         return locale;
     }
@@ -69,6 +73,7 @@ public class Person {
     }
 
 
+    @XmlElement
     public String getTwitter() {
         return twitter;
     }
@@ -77,6 +82,7 @@ public class Person {
         this.twitter = twitter;
     }
 
+    @XmlElement
     public String getEmail() {
         return email;
     }

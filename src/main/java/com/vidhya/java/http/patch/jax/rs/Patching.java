@@ -39,7 +39,6 @@ import javax.ws.rs.ext.MessageBodyWriter;
 import javax.ws.rs.ext.ReaderInterceptor;
 import javax.ws.rs.ext.ReaderInterceptorContext;
 
-import org.glassfish.jersey.message.MessageBodyWorkers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,6 +46,7 @@ import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
 import javax.annotation.Priority;
 import javax.ws.rs.ext.Provider;
+import javax.ws.rs.ext.Providers;
 /**
  * JAX-RS reader interceptor that implements server-side PATCH support.
  *
@@ -65,7 +65,7 @@ public class Patching implements ReaderInterceptor {
     @Context
     private  UriInfo uriInfo;
     @Context 
-    private  MessageBodyWorkers workers;
+    private  Providers providers;
 
     
     /**
@@ -113,7 +113,7 @@ public class Patching implements ReaderInterceptor {
         // Convert this object to a an array of bytes
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         MessageBodyWriter bodyWriter =
-                workers.getMessageBodyWriter(bean.getClass(), bean.getClass(),
+                providers.getMessageBodyWriter(bean.getClass(), bean.getClass(),
                         new Annotation[0], MediaType.APPLICATION_JSON_TYPE);
 
         bodyWriter.writeTo(bean, bean.getClass(), bean.getClass(),

@@ -7,22 +7,14 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>HTTP-PATCH-JAX-RS</name>
+    <name>HTTP-PATCH-JAX-RS Web APP</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
     <dependencies>
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-common</artifactId>
-            <version>2.22.2</version>
-            <type>jar</type>
-        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -33,6 +25,23 @@
             <groupId>com.github.fge</groupId>
             <artifactId>json-patch</artifactId>
             <version>1.6</version>
+            <type>jar</type>
+        </dependency>
+         <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-common</artifactId>
+            <version>2.22.2</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>2.22.2</version>
+        </dependency>       
+         <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>3.0.16.Final</version>
             <type>jar</type>
         </dependency>
         <dependency>
