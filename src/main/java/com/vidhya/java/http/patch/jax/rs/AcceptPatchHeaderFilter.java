@@ -61,6 +61,6 @@ public class AcceptPatchHeaderFilter implements ContainerResponseFilter {
         
         responseContext.getHeaders().add( "Access-Control-Allow-Origin", "*" );
         responseContext.getHeaders().add( "Access-Control-Allow-Credentials", "true" );
-        responseContext.getHeaders().add( "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH" );
+        responseContext.getHeaders().add( "Access-Control-Allow-Methods", "GET, PUT, PATCH" );
     }
 }
