@@ -68,16 +68,7 @@ public class Patching implements ReaderInterceptor {
     private  Providers providers;
 
     
-    /**
-     * {@code PatchingInterceptor} injection constructor.
-     *
-     * @param uriInfo {@code javax.ws.rs.core.UriInfo} proxy instance.
-     * @param workers {@link org.glassfish.jersey.message.MessageBodyWorkers} message body workers.
-     */
-//    public Patching(@Context UriInfo uriInfo, @Context MessageBodyWorkers workers) {
-//        this.uriInfo = uriInfo;
-//        this.workers = workers;
-//    }
+    
 
     @SuppressWarnings("unchecked")
     @Override
