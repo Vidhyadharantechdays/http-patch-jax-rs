@@ -58,5 +58,8 @@ public class AcceptPatchHeaderFilter implements ContainerResponseFilter {
                 headers.putSingle(ACCEPT_PATCH_HEADER, Patching.PATCH_MEDIA_TYPE);
             }
         }
+        responseContext.getHeaders().add( "Access-Control-Allow-Origin", "*" );
+        responseContext.getHeaders().add( "Access-Control-Allow-Credentials", "true" );
+        responseContext.getHeaders().add( "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH" );
     }
 }
