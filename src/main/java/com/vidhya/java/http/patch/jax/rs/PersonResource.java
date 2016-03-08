@@ -68,7 +68,7 @@ public class PersonResource {
                 + "</html>";
     }
     
-    @Path("/person")
+    @Path("/v1/person")
     @javax.ws.rs.GET
     @Consumes(MediaType.APPLICATION_JSON)
     public Person getPerson() {
@@ -79,14 +79,14 @@ public class PersonResource {
      * PUT method for updating an instance of PersonResource
      * @param person representation for the resource
      */
-    @Path("/person")
+    @Path("/v1/person")
     @PUT
     @Consumes({"application/xml", "application/json"})
     public void setPerson(Person person) {
         entityStorage.setPerson(person);
     }
     
-    @Path("/person")
+    @Path("/v1/person")
     @PATCH
     @Consumes(Patching.PATCH_MEDIA_TYPE)
     public Person patchPerson(Person person) {
