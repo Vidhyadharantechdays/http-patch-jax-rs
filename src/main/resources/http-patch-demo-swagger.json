@@ -1,0 +1,120 @@
+{ 
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "HTTP-PATCH-Demo",
+        "description": "A HTTP PATCH demo used for testing and mocking ",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "httppatch-vde.rhcloud.com",
+    "basePath": "/v1",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/person": {
+            "get": {
+                "description": "Get the current Person value for example default will return {\"name\":\"Vidhya\",\"age\":29,\"locale\":\"en\",\"twitter\":\"VidhyaJava\",\"email\":\"it.vidhyadharan@gmail.com\"} ",
+                "operationId": "getPerson_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],                
+		 		"responses": {                                
+                               "200": {
+                                 "description": "successful operation",
+                                 "schema": {
+                                   "$ref": "#/definitions/Person"
+                                 }
+                               }
+                             }
+			},
+            "put": {
+                "description": "",
+                "operationId": "Update_setPerson_",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                                { 
+								 "in": "body",
+                                 "name": "body",
+                                 "description": "Updated Person object",
+                                 "required": true,
+								 "schema": {
+                                    "$ref": "#/definitions/Person"
+                                  }
+                                }
+                              ],
+                "responses": {
+                    "204": {
+                        "description": "Update the entire Person"                        
+                    }
+                }
+            },
+            "patch": {
+                "description": "",
+                "operationId": "patchPerson_",
+				"consumes": [
+                    "application/json-patch+json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+	"definitions": {
+    "Person": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "xml": {
+            "name": "name"
+          }
+        },
+        "age": {
+          "type": "integer",
+		   "format": "int64",
+          "xml": {
+            "name": "age"
+          }
+        },
+        "locale": {
+          "type": "string",
+          "xml": {
+            "name": "locale"
+          }
+        },
+        "email": {
+          "type": "string",
+          "xml": {
+            "name": "email"
+          }
+        },
+        "twitter": {
+          "type": "string",
+          "xml": {
+            "name": "twitter"
+          }
+        }
+      },
+      "xml": {
+        "name": "Person"
+      }
+    }
+  }
+}
