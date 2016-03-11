@@ -47,6 +47,7 @@ public class PersonResource {
 
     @EJB
     private EntityStorageBean entityStorage;
+    final private String changelist ="beta.v.1.0";
     /**
      * Retrieves current Person
      * @return an instance of Person
@@ -61,9 +62,10 @@ public class PersonResource {
                 + "    </head>\n"
                 + "    <body>\n"
                 + "        <h1> Welcome to HTTP PATCH demo </h1>\n"
-                + "<h4> The latest is <h3> "+ 
+                + "       <small>"+changelist+"</small>"
+                + "<h4> The latest is "+ 
                 entityStorage.getPerson().toString()
-                + "</h3> </h4>"
+                + "</h4>"
                 + "    </body>\n"
                 + "</html>";
     }
