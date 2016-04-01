@@ -58,10 +58,10 @@ public class PersonResource {
         return "<html>\n"
                 + "     <head>\n"
                 + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
-                + "        <title>HTTP Patch demo</title>\n"
+                + "        <title>RESTful service - Person API</title>\n"
                 + "    </head>\n"
                 + "    <body>\n"
-                + "        <h1> Welcome to HTTP PATCH demo </h1>\n"
+                + "        <h1>  Welcome to Person API.</h1>\n"
                 + "       <small>"+changelist+"</small>"
                 + "<h4> The latest is "+ 
                 entityStorage.getPerson().toString()
