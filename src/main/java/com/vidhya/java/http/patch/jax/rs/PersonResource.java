@@ -47,7 +47,7 @@ public class PersonResource {
 
     @EJB
     private EntityStorageBean entityStorage;
-    final private String changelist ="beta.v.1.0";
+    final private String changelist ="beta.v.1.1";
     /**
      * Retrieves current Person
      * @return an instance of Person
@@ -75,6 +75,37 @@ public class PersonResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Person getPerson() {
         return entityStorage.getPerson();
+    }
+    
+    @Path("/webapp/t1")
+    @javax.ws.rs.GET
+    @Produces(MediaType.TEXT_HTML)
+    public String getT1() {
+         return "<html>\n"
+                + "     <head>\n"
+                + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+                + "        <title>Webapp T1</title>\n"
+                + "    </head>\n"
+                + "    <body>\n"
+                + "        <h1>  Welcome to Web application T1.</h1>\n"
+                + "       <small>"+changelist+"</small>"
+                + "    </body>\n"
+                + "</html>";
+    }
+    @Path("/webapp/t2")
+    @javax.ws.rs.GET
+    @Produces(MediaType.TEXT_HTML)
+    public String getT2() {
+         return "<html>\n"
+                + "     <head>\n"
+                + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+                + "        <title>Webapp T2</title>\n"
+                + "    </head>\n"
+                + "    <body>\n"
+                + "        <h1>  Welcome to Web application T2.</h1>\n"
+                + "       <small>"+changelist+"</small>"
+                + "    </body>\n"
+                + "</html>";
     }
 
     /**
