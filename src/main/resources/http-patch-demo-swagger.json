@@ -9,7 +9,7 @@
             "url": "https://opensource.org/licenses/MIT"
         }
     },
-    "host": "httppatch-vde.rhcloud.com",
+    "host": "http://http-patch-vidhya.1d35.starter-us-east-1.openshiftapps.com/",
     "basePath": "/v1",
     "securityDefinitions": {},
     "schemes": [
