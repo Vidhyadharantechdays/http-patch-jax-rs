@@ -34,7 +34,7 @@
                              }
 			},
             "put": {
-                "description": "",
+                "description": "Sample payload {\"name\":\"Vidhya\",\"age\":29,\"locale\":\"en\",\"twitter\":\"VidhyaJava\",\"email\":\"it.vidhyadharan@gmail.com\"} ",
                 "operationId": "Update_setPerson_",
                 "consumes": [
                     "application/json"
@@ -60,7 +60,7 @@
                 }
             },
             "patch": {
-                "description": "",
+                "description": "Sample payload [{ \"op\": \"remove\", \"path\": \"/email\" }, {\"op\":\"replace\", \"path\": \"/name\", \"value\": \"Kannan\" }]",
                 "operationId": "patchPerson_",
 				"consumes": [
                     "application/json-patch+json"
