@@ -1,2 +1,3 @@
-# http-patch-jax-rs
-A simple HTTP PATCH JAX-RS web application
+# Person API
+A simple HTTP REST service  web application also called as Person API
+Branching for test
