@@ -47,7 +47,7 @@ public class PersonResource {
 
     @EJB
     private EntityStorageBean entityStorage;
-    final private String changelist ="beta.v.1.1";
+    final private String changelist ="beta.v.1.2";
     /**
      * Retrieves current Person
      * @return an instance of Person
@@ -72,7 +72,7 @@ public class PersonResource {
     
     @Path("/v1/person")
     @javax.ws.rs.GET
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Person getPerson() {
         return entityStorage.getPerson();
     }
