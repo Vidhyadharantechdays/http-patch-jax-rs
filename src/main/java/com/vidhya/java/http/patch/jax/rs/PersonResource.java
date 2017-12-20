@@ -33,6 +33,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -116,6 +117,18 @@ public class PersonResource {
     @PUT
     @Consumes({"application/xml", "application/json"})
     public void setPerson(Person person) {
+        entityStorage.setPerson(person);
+    }
+    
+    
+     /**
+     * POST method for updating an instance of PersonResource
+     * @param person representation for the resource
+     */
+    @Path("/v1/person")
+    @POST
+    @Consumes({"application/xml", "application/json"})
+    public void postPerson(Person person) {
         entityStorage.setPerson(person);
     }
     

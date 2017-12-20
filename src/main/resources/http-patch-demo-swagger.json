@@ -59,6 +59,32 @@
                     }
                 }
             },
+            "post": {
+                "description": "Sample payload {\"name\":\"Vidhya\",\"age\":29,\"locale\":\"en\",\"twitter\":\"VidhyaJava\",\"email\":\"it.vidhyadharan@gmail.com\"} ",
+                "operationId": "Update_Person",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                                { 
+								 "in": "body",
+                                 "name": "body",
+                                 "description": "Updated Person object",
+                                 "required": true,
+								 "schema": {
+                                    "$ref": "#/definitions/Person"
+                                  }
+                                }
+                              ],
+                "responses": {
+                    "204": {
+                        "description": "Update the entire Person"                        
+                    }
+                }
+            },
             "patch": {
                 "description": "Sample payload [{ \"op\": \"remove\", \"path\": \"/email\" }, {\"op\":\"replace\", \"path\": \"/name\", \"value\": \"Kannan\" }]",
                 "operationId": "patchPerson_",
