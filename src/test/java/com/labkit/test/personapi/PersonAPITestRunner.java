@@ -21,27 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.vidhya.java.http.patch.jax.rs;
+package com.labkit.test.personapi;
 
-import java.util.HashSet;
-import java.util.Set;
-import javax.ws.rs.core.Application;
 /**
  * 
  *
  * @author vidhya (it.vidhyadharan@gmail.com)
  */
-@javax.ws.rs.ApplicationPath("")
-public class ApplicationConfig extends Application {
-
+public class PersonAPITestRunner {
     
-     @Override
-        public Set<Class<?>> getClasses() {
-
-            Set<Class<?>> listOfClasses = new HashSet<>();
-            listOfClasses.add(PersonResource.class);
-            listOfClasses.add(Patching.class);
-            listOfClasses.add(AcceptPatchHeaderFilter.class);
-            return listOfClasses;
-          } 
 }
