@@ -23,11 +23,17 @@
  */
 package com.labkit.test.personapi;
 
+import com.intuit.karate.junit4.Karate;
+import cucumber.api.CucumberOptions;
+import org.junit.runner.RunWith;
+
 /**
- * 
+ *  Test runner for Person API
  *
  * @author vidhya (it.vidhyadharan@gmail.com)
  */
+@RunWith(Karate.class)
+@CucumberOptions(features = "classpath:com/labkit/test/personapi/PersonApi.feature")
 public class PersonAPITestRunner {
     
 }
