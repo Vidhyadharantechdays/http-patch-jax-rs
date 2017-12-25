@@ -1,5 +1,7 @@
 Feature: Test Person API
+Background:
+* url apiUrl
   Scenario: Navigate to Get person
-    Given url 'http://http-patch-vidhya.1d35.starter-us-east-1.openshiftapps.com/v1/person'
+    Given path 'person'
     When method GET
     Then status 200
