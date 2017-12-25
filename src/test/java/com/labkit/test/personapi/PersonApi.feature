@@ -5,3 +5,4 @@ Background:
     Given path 'person'
     When method GET
     Then status 200
+    And match response == {"name":"Vidhya","age":29,"locale":"en","twitter":"VidhyaJava","email":"it.vidhyadharan@gmail.com"}
