@@ -6,7 +6,7 @@ Background:
     Given path 'person'
     And request {"name":"Vidhya","age":29,"locale":"en","twitter":"VidhyaJava","email":"it.vidhyadharan@gmail.com"}
     And header Accept = 'application/json'   
-    When method put
+    When method PUT
     And header Content-Type = 'application/json'        
     Then status 204
   Scenario: Navigate to Get person
@@ -21,3 +21,10 @@ Background:
     When method post
     And header Content-Type = 'application/json'        
     Then status 204
+  Scenario: Test for PATCH METHOD 
+    Given path 'person'
+    And request [{ "op": "remove", "path": "/email" }, {"op":"replace", "path": "/name", "value": "Vidhyadharan Deivamani" }]
+    And header Accept = 'application/json'   
+    When method PATCH
+    And header Content-Type = 'application/json-patch+json'        
+    Then status 200
