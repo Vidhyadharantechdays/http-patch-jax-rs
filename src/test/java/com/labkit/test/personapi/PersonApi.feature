@@ -24,7 +24,7 @@ Background:
   Scenario: Test for PATCH METHOD 
     Given path 'person'
     And request [{ "op": "remove", "path": "/email" }, {"op":"replace", "path": "/name", "value": "Vidhyadharan Deivamani" }]
-    And header Accept = 'application/json'   
-    When method PATCH
-    And header Content-Type = 'application/json-patch+json'        
+    And header Content-Type = 'application/json-patch+json'
+    And header Accept = 'application/json' 
+    When method patch       
     Then status 200
