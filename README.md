@@ -1,4 +1,4 @@
-# Person API [![Build Status](https://travis-ci.org/vidhya03/http-patch-jax-rs.svg?branch=master)](https://travis-ci.org/vidhya03/http-patch-jax-rs)
+# Person API [![Build Status](https://travis-ci.org/vidhya03/http-patch-jax-rs.svg?branch=master)](https://travis-ci.org/vidhya03/http-patch-jax-rs) [![codecov](https://codecov.io/gh/vidhya03/http-patch-jax-rs/branch/master/graph/badge.svg)](https://codecov.io/gh/vidhya03/http-patch-jax-rs)
 A simple HTTP REST service  web application also called as Person API
 
 # Heads up
