@@ -7,3 +7,20 @@ A simple HTTP REST service  web application also called as Person API
 - Swagger for this API [http-patch-demo-swagger.json](src/main/resources/http-patch-demo-swagger.json)
 - Try this Person API at http://editor.personapi.labkit.in/
 
+# Development
+- checkout
+ ```  
+   git clone https://github.com/vidhya03/http-patch-jax-rs.git
+```
+- compile
+```
+  cd  http-patch-jax-rs.git
+  mvn compile
+```
+- Test
+```
+  mvn test
+```
+
+# License
+* [MIT License](http://www.opensource.org/licenses/mit-license.php)
