@@ -1,1 +1,4 @@
-curl --data-binary @- https://codecov.io/validate
+coverage:
+  precision: 2
+  round: nearest
+  range: "40...70"
