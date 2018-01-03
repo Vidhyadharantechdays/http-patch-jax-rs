@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-spotbugs</actionName>
+            <displayName>spotbugs</displayName>
+            <goals>
+                <goal>spotbugs:spotbugs</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-spotbugs:gui</actionName>
+            <displayName>spotbugs:gui</displayName>
+            <goals>
+                <goal>spotbugs:gui</goal>
+            </goals>
+        </action>
+    </actions>

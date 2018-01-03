@@ -36,7 +36,7 @@ import javax.ejb.Singleton;
 public class EntityStorageBean {
 
     // name field
-    private Person person = PersonUtil.DefaultPerson();
+    private Person person = PersonUtil.getDefaultPerson();
 
     public Person getPerson() {
         return person;

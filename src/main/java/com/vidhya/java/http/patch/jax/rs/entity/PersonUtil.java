@@ -30,7 +30,7 @@ package com.vidhya.java.http.patch.jax.rs.entity;
  */
 public class PersonUtil {
     
-    public static Person DefaultPerson(){
+    public static Person getDefaultPerson(){
         
         Person p = new Person();
         p.setName("Vidhya");
