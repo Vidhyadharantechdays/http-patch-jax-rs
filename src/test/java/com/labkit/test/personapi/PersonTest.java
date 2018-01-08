@@ -23,9 +23,11 @@
  */
 package com.labkit.test.personapi;
 
+import com.sun.javafx.fxml.expression.Expression;
 import com.vidhya.java.http.patch.jax.rs.entity.Person;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -51,11 +53,27 @@ public class PersonTest {
 
     @Test
     public void testPerson() {
-        Assert.assertThat("Verify age",30,is(equalTo(vidhya.getAge())));
-        Assert.assertThat("Verify Name","Vidhyadharan Deivamani",is(equalTo(vidhya.getName())));
-        Assert.assertThat("Verify Locale","English",is(equalTo(vidhya.getLocale())));
-        Assert.assertThat("Verify Twitter","vidhya03",is(equalTo(vidhya.getTwitter())));
-        Assert.assertThat("Verify Email","it.vidhyadharan@gmail.com",is(equalTo(vidhya.getEmail())));
+        String name = "Vidhyadharan Deivamani",
+                locale = "English", twitter="vidhya03",
+                email="it.vidhyadharan@gmail.com";
+        Integer age =30;
+        Assert.assertThat("Verify age",age,is(equalTo(vidhya.getAge())));
+        Assert.assertThat("Verify Name",name,is(equalTo(vidhya.getName())));
+        Assert.assertThat("Verify Locale",locale,is(equalTo(vidhya.getLocale())));
+        Assert.assertThat("Verify Twitter",twitter,is(equalTo(vidhya.getTwitter())));
+        Assert.assertThat("Verify Email",email,is(equalTo(vidhya.getEmail())));
+        
+        
+        
+        Assert.assertThat("Verify Person toString","Person{" + "name=" + name + 
+                ", age=" + age + ", locale=" + locale + ", twitter=" + twitter +
+                ", email=" + email + '}',is(equalTo(vidhya.toString())));
+        
+        Person p = new Person();
+        p.setEmail("test@gmail.com");
+        
+        Assert.assertThat("Hashcode should not equal",vidhya.hashCode(),not(p.hashCode()));
+        
     }
     
 }
