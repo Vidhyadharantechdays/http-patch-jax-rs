@@ -51,7 +51,7 @@ public class PersonTest {
 
     @Test
     public void testPerson() {
-        Assert.assertThat("Verify age",31,is(equalTo(vidhya.getAge())));
+        Assert.assertThat("Verify age",30,is(equalTo(vidhya.getAge())));
         Assert.assertThat("Verify Name","Vidhyadharan Deivamani",is(equalTo(vidhya.getName())));
         Assert.assertThat("Verify Locale","English",is(equalTo(vidhya.getLocale())));
         Assert.assertThat("Verify Twitter","vidhya03",is(equalTo(vidhya.getTwitter())));

@@ -87,6 +87,7 @@
                 <configuration> 
                     <includes>
                         <include>PersonAPITestRunner.java</include>
+                        <include>PersonTest.java</include>
                     </includes>
                     <skipTests>false</skipTests>
                 </configuration>
