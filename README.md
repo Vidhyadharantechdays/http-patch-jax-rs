@@ -6,7 +6,7 @@ A simple HTTP REST service  web application also called as Person API
 - Access this project @ http://http-patch-vidhya.1d35.starter-us-east-1.openshiftapps.com/
 - Swagger for this API [http-patch-demo-swagger.json](src/main/resources/http-patch-demo-swagger.json)
 - [Deeplink](https://raw.githubusercontent.com/vidhya03/http-patch-jax-rs/master/src/main/resources/http-patch-demo-swagger.json) for direct import
-- Try this Person API at http://editor.personapi.labkit.in/
+- Try this Person API at http://try.personapi.labkit.in/
 
 # Development
 - checkout
