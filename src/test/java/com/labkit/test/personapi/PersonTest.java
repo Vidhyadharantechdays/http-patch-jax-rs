@@ -33,14 +33,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-
 /**
  *
  * @author Vidhyadharan Deivamani (it.vidhyadharan@gmail.com)
  */
 public class PersonTest {
-    
-    static Person vidhya =null;
+
+    static Person vidhya = null;
+
     @BeforeClass
     public static void intialize() {
         vidhya = new Person();
@@ -54,26 +54,52 @@ public class PersonTest {
     @Test
     public void testPerson() {
         String name = "Vidhyadharan Deivamani",
-                locale = "English", twitter="vidhya03",
-                email="it.vidhyadharan@gmail.com";
-        Integer age =30;
-        Assert.assertThat("Verify age",age,is(equalTo(vidhya.getAge())));
-        Assert.assertThat("Verify Name",name,is(equalTo(vidhya.getName())));
-        Assert.assertThat("Verify Locale",locale,is(equalTo(vidhya.getLocale())));
-        Assert.assertThat("Verify Twitter",twitter,is(equalTo(vidhya.getTwitter())));
-        Assert.assertThat("Verify Email",email,is(equalTo(vidhya.getEmail())));
-        
-        
-        
-        Assert.assertThat("Verify Person toString","Person{" + "name=" + name + 
-                ", age=" + age + ", locale=" + locale + ", twitter=" + twitter +
-                ", email=" + email + '}',is(equalTo(vidhya.toString())));
-        
+                locale = "English", twitter = "vidhya03",
+                email = "it.vidhyadharan@gmail.com";
+        Integer age = 30;
+        Assert.assertThat("Verify age", age, is(equalTo(vidhya.getAge())));
+        Assert.assertThat("Verify Name", name, is(equalTo(vidhya.getName())));
+        Assert.assertThat("Verify Locale", locale, is(equalTo(vidhya.getLocale())));
+        Assert.assertThat("Verify Twitter", twitter, is(equalTo(vidhya.getTwitter())));
+        Assert.assertThat("Verify Email", email, is(equalTo(vidhya.getEmail())));
+
+        Assert.assertThat("Verify Person toString", "Person{" + "name=" + name
+                + ", age=" + age + ", locale=" + locale + ", twitter=" + twitter
+                + ", email=" + email + '}', is(equalTo(vidhya.toString())));
+
         Person p = new Person();
-        p.setEmail("test@gmail.com");
-        
-        Assert.assertThat("Hashcode should not equal",vidhya.hashCode(),not(p.hashCode()));
-        
+
+        Assert.assertThat("Hashcode should not equal", vidhya.hashCode(), not(p.hashCode()));
+
+        Assert.assertTrue("Object to same object equals ", p.equals(p));
+        Assert.assertFalse("Object to null equals ", p.equals(null));
+        Assert.assertFalse("Object to other class ", p.equals(new String("test")));
+        verifyEquals(vidhya, p);
+
+        p.setName(vidhya.getName());
+        verifyEquals(vidhya, p);
+
+        p.setLocale(vidhya.getLocale());
+        verifyEquals(vidhya, p);
+
+        p.setTwitter(vidhya.getTwitter());
+        verifyEquals(vidhya, p);
+
+        p.setEmail(vidhya.getEmail());
+        verifyEquals(vidhya, p);
+
+        p.setAge(vidhya.getAge());
+//        verifyEquals(vidhya, p);
+
+        Assert.assertTrue("Both object should be equal", vidhya.equals(p));
+
     }
-    
+
+    public void verifyEquals(Person v, Person x) {
+
+        Assert.assertFalse("Person x p to vidhya v ", x.equals(v));
+        Assert.assertFalse("Vidhya v to Person x", v.equals(x));
+
+    }
+
 }
