@@ -25,6 +25,7 @@ package com.labkit.test.personapi;
 
 import com.sun.javafx.fxml.expression.Expression;
 import com.vidhya.java.http.patch.jax.rs.entity.Person;
+import com.vidhya.java.http.patch.jax.rs.entity.PersonUtil;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
@@ -96,10 +97,21 @@ public class PersonTest {
     }
 
     public void verifyEquals(Person v, Person x) {
-
         Assert.assertFalse("Person x p to vidhya v ", x.equals(v));
         Assert.assertFalse("Vidhya v to Person x", v.equals(x));
-
     }
-
+    
+    
+    @Test
+    public void testPersonUtil(){
+        Person defaultPerson = PersonUtil.getDefaultPerson();
+        Person p = new Person();
+        p.setName("Vidhya");
+        p.setAge(29);
+        p.setLocale("en");
+        p.setTwitter("vidhya03");
+        p.setEmail("it.vidhyadharan@gmail.com");
+        Assert.assertThat("Default person ", defaultPerson, is(p));
+    }
+    
 }

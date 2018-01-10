@@ -36,7 +36,7 @@ public class PersonUtil {
         p.setName("Vidhya");
         p.setAge(29);
         p.setLocale("en");
-        p.setTwitter("VidhyaJava");
+        p.setTwitter("vidhya03");
         p.setEmail("it.vidhyadharan@gmail.com");
         
         return p;
