@@ -22,6 +22,13 @@ A simple HTTP REST service  web application also called as Person API
 ```
   mvn test
 ```
+# Code Coverage using Jacoco
+- To run test and perform code coverage
+```
+  mvn clean test -Pcoverage
+```
+and the HTML reports would be output to target/site/jacoco/index.html
+![Jacoco Code Coverage Report](src/test/resources/jacoco-html-reports.png) 
 
 # License
-* [MIT License](http://www.opensource.org/licenses/mit-license.php)
+* [MIT License](https://github.com/vidhya03/http-patch-jax-rs/blob/master/LICENSE.md)
