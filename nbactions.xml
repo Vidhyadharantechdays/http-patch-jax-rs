@@ -14,4 +14,15 @@
                 <goal>spotbugs:gui</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-mvn test -Pcoverage</actionName>
+            <displayName>mvn test -Pcoverage</displayName>
+            <goals>
+                <goal>mvn</goal>
+                <goal>test</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>coverage</activatedProfile>
+            </activatedProfiles>
+        </action>
     </actions>
