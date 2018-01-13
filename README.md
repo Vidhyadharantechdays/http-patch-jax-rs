@@ -22,6 +22,13 @@ A simple HTTP REST service  web application also called as Person API
 ```
   mvn test
 ```
+# Code Coverage using Cobertura
+- To run test and perform code coverage
+```
+  mvn cobertura:cobertura
+```
+and the HTML reports would be output to target/site/cobertura/index.html
+![Cobertura Code Coverage Report](src/test/resources/cobertura-html-reports.png) 
 # Code Coverage using Jacoco
 - To run test and perform code coverage
 ```
