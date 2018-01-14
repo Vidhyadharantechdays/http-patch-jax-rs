@@ -2,7 +2,7 @@ function() {
   var env = karate.env; // get system property 'karate.env'
   karate.log('karate.env system property was:', env);
   if (!env) {
-    env = 'dev';
+    env = 'live';
   }
   var config = {
     env: env,
@@ -10,7 +10,7 @@ function() {
   };
   if (env === 'dev') {
     // customize
-    // e.g. config.foo = 'bar';
+   config.apiUrl = 'http://localhost:8080/http-patch-jax-rs/v1';
   } else if (env === 'e2e') {
     // customize
   }

@@ -25,4 +25,27 @@
                 <activatedProfile>coverage</activatedProfile>
             </activatedProfiles>
         </action>
+        <action>
+            <actionName>CUSTOM-mvn test</actionName>
+            <displayName>mvn test</displayName>
+            <goals>
+                <goal>test</goal>
+            </goals>
+            <properties>
+                <karate.env>dev</karate.env>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-jacoco test coverage profile</actionName>
+            <displayName>jacoco test coverage profie</displayName>
+            <goals>
+                <goal>test</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>coverage</activatedProfile>
+            </activatedProfiles>
+            <properties>
+                <karate.env>dev</karate.env>
+            </properties>
+        </action>
     </actions>
