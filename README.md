@@ -18,10 +18,18 @@ A simple HTTP REST service  web application also called as Person API
   cd  http-patch-jax-rs.git
   mvn compile
 ```
-- Test
+
+# Rest API testing using karate
+- To run test against production
 ```
   mvn test
 ```
+- To run test against local deployment
+```
+  mvn test -dkarate.env=dev
+```
+and the HTML reports would be output to /target/surefire-reports/TEST-com.labkit.test.personapi.PersonApi.html 
+![karate test Report](src/test/resources/karate-rest-api-test-reports.png) 
 # Code Coverage using Cobertura
 - To run test and perform code coverage
 ```

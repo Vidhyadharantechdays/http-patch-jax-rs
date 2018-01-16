@@ -26,8 +26,8 @@
             </activatedProfiles>
         </action>
         <action>
-            <actionName>CUSTOM-mvn test</actionName>
-            <displayName>mvn test</displayName>
+            <actionName>CUSTOM-mvn test with dev enabled</actionName>
+            <displayName>mvn test with dev enabled</displayName>
             <goals>
                 <goal>test</goal>
             </goals>
