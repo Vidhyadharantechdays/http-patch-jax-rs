@@ -23,6 +23,7 @@
  */
 package com.vidhya.java.http.patch.jax.rs;
 
+import com.vidhya.java.http.jax.rs.fileupload.FileUploadResource;
 import java.util.HashSet;
 import java.util.Set;
 import javax.ws.rs.core.Application;
@@ -42,6 +43,11 @@ public class ApplicationConfig extends Application {
             listOfClasses.add(PersonResource.class);
             listOfClasses.add(Patching.class);
             listOfClasses.add(AcceptPatchHeaderFilter.class);
+            
+            //File upload resource            
+            listOfClasses.add(FileUploadResource.class);
+            
+            
             return listOfClasses;
           } 
 }

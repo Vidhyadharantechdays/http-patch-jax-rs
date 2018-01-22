@@ -48,4 +48,14 @@
                 <karate.env>dev</karate.env>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-Package and skipTests</actionName>
+            <displayName>Package and skipTests</displayName>
+            <goals>
+                <goal>package</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+        </action>
     </actions>

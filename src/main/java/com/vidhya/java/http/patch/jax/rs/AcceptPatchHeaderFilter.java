@@ -24,6 +24,7 @@
 package com.vidhya.java.http.patch.jax.rs;
 
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.ws.rs.HttpMethod;
@@ -50,7 +51,7 @@ public class AcceptPatchHeaderFilter implements ContainerResponseFilter {
     public void filter(final ContainerRequestContext requestContext, final ContainerResponseContext responseContext)
             throws IOException {
 
-        logger.info("The method is "+requestContext.getMethod());
+        logger.log(Level.INFO, "The method is {0}", requestContext.getMethod());
         if (HttpMethod.OPTIONS.equals(requestContext.getMethod())) {
             final MultivaluedMap<String, Object> headers = responseContext.getHeaders();
             if (!headers.containsKey(ACCEPT_PATCH_HEADER)) {
