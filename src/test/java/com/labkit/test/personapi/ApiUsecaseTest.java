@@ -23,21 +23,16 @@
  */
 package com.labkit.test.personapi;
 
-import com.intuit.karate.ui.App;
+import com.intuit.karate.junit4.Karate;
+import cucumber.api.CucumberOptions;
+import org.junit.runner.RunWith;
 
 /**
- * 
- * Class used for debugging the DSL feature. This will run the javafx ui
- * so that used for debugging.
  *
- * @author Vidhyadharan Deivamani (it.vidhyadharan@gmail.com)
+ * @author vidhya (it.vidhyadharan@gmail.com)
  */
-public class AppRunner {
+@RunWith(Karate.class)
+@CucumberOptions(features = "classpath:com/labkit/test/personapi/ApiResouce.feature")
+public class ApiUsecaseTest {
     
-    public static void main(String ... args){
-        ClassLoader loader = AppRunner.class.getClassLoader();
-        /* change the bellow feature and run&debug your DSL */
-        String filePath = loader.getResource("com/labkit/test/personapi/Fileupload.feature").getFile();
-        App.run(filePath,"dev");
-    }
 }
