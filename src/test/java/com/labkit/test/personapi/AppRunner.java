@@ -35,9 +35,10 @@ import com.intuit.karate.ui.App;
 public class AppRunner {
     
     public static void main(String ... args){
+        System.setProperty("karate.env", "dev");
         ClassLoader loader = AppRunner.class.getClassLoader();
         /* change the bellow feature and run&debug your DSL */
-        String filePath = loader.getResource("com/labkit/test/personapi/Fileupload.feature").getFile();
+        String filePath = loader.getResource("com/labkit/test/personapi/ApiResouce.feature").getFile();
         App.run(filePath,"dev");
     }
 }
