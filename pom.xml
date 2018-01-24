@@ -161,8 +161,12 @@
             <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
             <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
             <id>openshift</id>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
             <build>
                 <finalName>httppatch</finalName>
+                
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -174,9 +178,11 @@
                             <compilerArguments>
                                 <endorseddirs>${endorsed.dir}</endorseddirs>
                             </compilerArguments>
-                            <excludes>
-                                <exclude>**/src/test/java/com/labkit/test/personapi/AppRunner.java</exclude></excludes>
+<!--                            <excludes>
+                                <exclude>**/src/test/java/com/labkit/test/personapi/AppRunner.java</exclude>
+                            </excludes>-->
                         </configuration>
+                        
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>

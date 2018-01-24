@@ -70,9 +70,9 @@
             <goals>
                 <goal>package</goal>
             </goals>
-            <properties>
+<!--            <properties>
                 <skipTests>true</skipTests>
-            </properties>
+            </properties>-->
             <activatedProfiles>
                 <activatedProfile>openshift</activatedProfile>
             </activatedProfiles>
