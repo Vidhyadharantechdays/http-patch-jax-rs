@@ -30,6 +30,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.Charset;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -43,12 +45,15 @@ import javax.ws.rs.core.Response;
  */
 @Path("/")
 public class FileUploadResource {
+    
+     static final Logger LOGGER = Logger.getLogger(FileUploadResource.class.getName());
 
     @POST
     @Path("/v1/upload/fileupload")
     @Consumes(MediaType.APPLICATION_OCTET_STREAM)
     @Produces(MediaType.TEXT_PLAIN)
     public Response postOctetStream(InputStream content) {
+        LOGGER.log(Level.INFO, "The endpoint  is /v1/upload/fileupload");
         try (Reader reader = new InputStreamReader(content,Charset.defaultCharset())) {
             int totalsize = 0;
             int count = 0;
@@ -58,7 +63,7 @@ public class FileUploadResource {
             }
             return Response.ok(totalsize).build();
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error at /v1/upload/fileupload ",e);
             return Response.serverError().build();
         }
     }
@@ -68,6 +73,7 @@ public class FileUploadResource {
     @Consumes({ MediaType.APPLICATION_OCTET_STREAM, "image/png" })
     @Produces(MediaType.TEXT_PLAIN)
     public Response postImageFile(File file) {
+        LOGGER.log(Level.INFO, "The endpoint  is /v1/upload/png");
         try (Reader reader = new InputStreamReader (new FileInputStream(file),Charset.defaultCharset())) {
             int totalsize = 0;
             int count = 0;
@@ -77,7 +83,7 @@ public class FileUploadResource {
             }
             return Response.ok(totalsize).build();
         } catch (IOException e) {
-            e.printStackTrace();
+                        LOGGER.log(Level.SEVERE, "Error at /v1/upload/png",e);
             return Response.serverError().build();
         }
     }

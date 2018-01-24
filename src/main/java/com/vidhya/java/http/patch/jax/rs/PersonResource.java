@@ -48,7 +48,7 @@ public class PersonResource {
 
     @EJB
     private EntityStorageBean entityStorage;
-    final private String changelist ="beta.v.1.2";
+    final private String changelist ="beta.v.1.2.1";
     /**
      * Retrieves current Person
      * @return an instance of Person
