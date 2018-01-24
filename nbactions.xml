@@ -6,6 +6,9 @@
             <goals>
                 <goal>spotbugs:spotbugs</goal>
             </goals>
+            <activatedProfiles>
+                <activatedProfile>spotbugs</activatedProfile>
+            </activatedProfiles>
         </action>
         <action>
             <actionName>CUSTOM-spotbugs:gui</actionName>
@@ -13,6 +16,9 @@
             <goals>
                 <goal>spotbugs:gui</goal>
             </goals>
+            <activatedProfiles>
+                <activatedProfile>spotbugs</activatedProfile>
+            </activatedProfiles>
         </action>
         <action>
             <actionName>CUSTOM-mvn test -Pcoverage</actionName>
@@ -57,5 +63,18 @@
             <properties>
                 <skipTests>true</skipTests>
             </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-Openshift Build</actionName>
+            <displayName>Openshift Build</displayName>
+            <goals>
+                <goal>package</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>openshift</activatedProfile>
+            </activatedProfiles>
         </action>
     </actions>
