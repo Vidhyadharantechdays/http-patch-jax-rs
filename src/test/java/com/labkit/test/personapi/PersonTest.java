@@ -23,7 +23,6 @@
  */
 package com.labkit.test.personapi;
 
-import com.sun.javafx.fxml.expression.Expression;
 import com.vidhya.java.http.patch.jax.rs.entity.Person;
 import com.vidhya.java.http.patch.jax.rs.entity.PersonUtil;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -32,7 +31,6 @@ import static org.hamcrest.CoreMatchers.not;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 /**
  *
