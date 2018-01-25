@@ -38,7 +38,7 @@ public class AppRunner {
         System.setProperty("karate.env", "dev");
         ClassLoader loader = AppRunner.class.getClassLoader();
         /* change the bellow feature and run&debug your DSL */
-        String filePath = loader.getResource("com/labkit/test/personapi/ApiResouce.feature").getFile();
-        App.run(filePath,"dev");
+        String filePath = loader.getResource("com/labkit/test/personapi/ApiResource.feature").getFile();
+        App.run(filePath,"prod");
     }
 }

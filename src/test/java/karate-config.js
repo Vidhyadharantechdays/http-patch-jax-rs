@@ -10,7 +10,7 @@ function() {
   };
   if (env === 'dev') {
     // customize
-   config.apiUrl = 'http://localhost:18080/http-patch-jax-rs/v1';
+   config.apiUrl = 'http://localhost:18080/http-patch-jax-rs/v1/';
   } else if (env === 'e2e') {
     // customize
   }
