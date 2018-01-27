@@ -50,3 +50,5 @@ and the HTML reports would be output to target/site/jacoco/index.html
 
 # License
 * [MIT License](https://github.com/vidhya03/http-patch-jax-rs/blob/master/LICENSE.md)
+
+# Credits

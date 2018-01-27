@@ -24,15 +24,15 @@
                     "application/json"
                 ],
                 "parameters": [],                
-		 		"responses": {                                
-                               "200": {
-                                 "description": "successful operation",
-                                 "schema": {
-                                   "$ref": "#/definitions/Person"
-                                 }
-                               }
-                             }
-			},
+                "responses": {                                
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Person"
+                        }
+                    }
+                }
+            },
             "put": {
                 "description": "Sample payload {\"name\":\"Vidhya\",\"age\":29,\"locale\":\"en\",\"twitter\":\"VidhyaJava\",\"email\":\"it.vidhyadharan@gmail.com\"} ",
                 "operationId": "Update_setPerson_",
@@ -43,16 +43,16 @@
                     "application/json"
                 ],
                 "parameters": [
-                                { 
-								 "in": "body",
-                                 "name": "body",
-                                 "description": "Updated Person object",
-                                 "required": true,
-								 "schema": {
-                                    "$ref": "#/definitions/Person"
-                                  }
-                                }
-                              ],
+                    { 
+                        "in": "body",
+                        "name": "body",
+                        "description": "Updated Person object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Person"
+                        }
+                    }
+                ],
                 "responses": {
                     "204": {
                         "description": "Update the entire Person"                        
@@ -69,16 +69,16 @@
                     "application/json"
                 ],
                 "parameters": [
-                                { 
-								 "in": "body",
-                                 "name": "body",
-                                 "description": "Updated Person object",
-                                 "required": true,
-								 "schema": {
-                                    "$ref": "#/definitions/Person"
-                                  }
-                                }
-                              ],
+                    { 
+                        "in": "body",
+                        "name": "body",
+                        "description": "Updated Person object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Person"
+                        }
+                    }
+                ],
                 "responses": {
                     "204": {
                         "description": "Update the entire Person"                        
@@ -88,7 +88,7 @@
             "patch": {
                 "description": "Sample payload [{ \"op\": \"remove\", \"path\": \"/email\" }, {\"op\":\"replace\", \"path\": \"/name\", \"value\": \"Kannan\" }]",
                 "operationId": "patchPerson_",
-				"consumes": [
+                "consumes": [
                     "application/json-patch+json"
                 ],
                 "produces": [
@@ -101,46 +101,61 @@
                     }
                 }
             }
+        },
+        "/upload/fileupload": {
+            "post": {
+                "description": "Any file upload",
+                "operationId": "fileupload",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "parameters": [],                
+                "responses": {                                
+                    "200": {
+                        "description": "return the size of the file in bytes"
+                    }
+                }
+            }
         }
     },
-	"definitions": {
-    "Person": {
-      "properties": {
-        "name": {
-          "type": "string",
-          "xml": {
-            "name": "name"
-          }
-        },
-        "age": {
-          "type": "integer",
-		   "format": "int64",
-          "xml": {
-            "name": "age"
-          }
-        },
-        "locale": {
-          "type": "string",
-          "xml": {
-            "name": "locale"
-          }
-        },
-        "email": {
-          "type": "string",
-          "xml": {
-            "name": "email"
-          }
-        },
-        "twitter": {
-          "type": "string",
-          "xml": {
-            "name": "twitter"
-          }
+        "definitions": {
+            "Person": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "xml": {
+                            "name": "name"
+                        }
+                    },
+                    "age": {
+                        "type": "integer",
+                        "format": "int64",
+                        "xml": {
+                            "name": "age"
+                        }
+                    },
+                    "locale": {
+                        "type": "string",
+                        "xml": {
+                            "name": "locale"
+                        }
+                    },
+                    "email": {
+                        "type": "string",
+                        "xml": {
+                            "name": "email"
+                        }
+                    },
+                    "twitter": {
+                        "type": "string",
+                        "xml": {
+                            "name": "twitter"
+                        }
+                    }
+                },
+                "xml": {
+                    "name": "Person"
+                }
+            }
         }
-      },
-      "xml": {
-        "name": "Person"
-      }
-    }
-  }
 }
