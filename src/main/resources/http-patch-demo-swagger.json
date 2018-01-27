@@ -6,7 +6,7 @@
         "description": "A HTTP PATCH demo used for testing and mocking ",
         "license": {
             "name": "MIT",
-            "url": "https://opensource.org/licenses/MIT"
+            "url": "https://github.com/vidhya03/http-patch-jax-rs/blob/master/LICENSE.md"
         }
     },
     "host": "http-patch-vidhya.1d35.starter-us-east-1.openshiftapps.com",
@@ -19,7 +19,7 @@
         "/person": {
             "get": {
                 "description": "Get the current Person value for example default will return {\"name\":\"Vidhya\",\"age\":29,\"locale\":\"en\",\"twitter\":\"VidhyaJava\",\"email\":\"it.vidhyadharan@gmail.com\"} ",
-                "operationId": "getPerson_",
+                "operationId": "getPerson",
                 "produces": [
                     "application/json"
                 ],
@@ -35,7 +35,7 @@
             },
             "put": {
                 "description": "Sample payload {\"name\":\"Vidhya\",\"age\":29,\"locale\":\"en\",\"twitter\":\"VidhyaJava\",\"email\":\"it.vidhyadharan@gmail.com\"} ",
-                "operationId": "Update_setPerson_",
+                "operationId": "UpdatePerson",
                 "consumes": [
                     "application/json"
                 ],
@@ -61,7 +61,7 @@
             },
             "post": {
                 "description": "Sample payload {\"name\":\"Vidhya\",\"age\":29,\"locale\":\"en\",\"twitter\":\"VidhyaJava\",\"email\":\"it.vidhyadharan@gmail.com\"} ",
-                "operationId": "Update_Person",
+                "operationId": "UpdateEntirePerson",
                 "consumes": [
                     "application/json"
                 ],
@@ -87,7 +87,7 @@
             },
             "patch": {
                 "description": "Sample payload [{ \"op\": \"remove\", \"path\": \"/email\" }, {\"op\":\"replace\", \"path\": \"/name\", \"value\": \"Kannan\" }]",
-                "operationId": "patchPerson_",
+                "operationId": "UpdateParticularField",
                 "consumes": [
                     "application/json-patch+json"
                 ],
@@ -106,7 +106,7 @@
             "post": {
                 "description": "Any file upload",
                 "operationId": "fileupload",
-                "produces": [
+                "consumes": [
                     "application/octet-stream"
                 ],
                 "parameters": [],                
