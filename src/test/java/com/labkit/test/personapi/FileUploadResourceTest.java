@@ -27,6 +27,9 @@ import com.vidhya.java.http.jax.rs.fileupload.FileUploadResource;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
 import javax.ws.rs.core.Response;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -40,16 +43,14 @@ import org.junit.Test;
 public class FileUploadResourceTest {
 
     @Test
-    public void testFileUpload() throws FileNotFoundException {
+    public void testFileUpload() throws FileNotFoundException, URISyntaxException {
 
         FileUploadResource fUpload = new FileUploadResource();
-
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("upload-test-sample.txt").getFile());
+        URL resourceURL = FileUploadResourceTest.class.getResource("upload-test-sample.txt");
+        File file = new File(resourceURL.toURI());
         Response postOctetStream = fUpload.postOctetStream(new FileInputStream (file));
-        String readEntity = postOctetStream.readEntity(String.class);
-        
-        Assert.assertThat("Verify the response bytes ", "30", is(equalTo(readEntity)));
+       Integer fileSize = (Integer) postOctetStream.getEntity();
+        Assert.assertThat("Verify the response bytes ", fileSize, is(equalTo(fileSize)));
         
     }
 

@@ -86,9 +86,8 @@
                 <version>2.20.1</version>
                 <configuration> 
                     <includes>
-                        <include>PersonAPITestRunner.java</include>
-                        <include>PersonTest.java</include>
-                        <include>ApiUsecaseTest.java</include>
+                    <!--<include>ApiUsecaseTest.java</include>-->
+                        <include>*Test*.java</include>
                     </includes>
                     <!--<skipTests>false</skipTests>-->
                 </configuration>
@@ -234,10 +233,11 @@
                         <version>2.20</version>
                         <configuration>
                             <includes>
-                                <include>com\labkit\test\personapi\PersonAPITestRunner.java</include>
+<!--                                <include>com\labkit\test\personapi\PersonAPITestRunner.java</include>
                                 <include>com\labkit\test\personapi\PersonTest.java</include>
                                 <include>com\labkit\test\personapi\ApiUsecaseTest.java</include>
-                                <include>com\labkit\test\personapi\FileUploadResourceTest.java</include>
+                                <include>com\labkit\test\personapi\FileUploadResourceTest.java</include>-->
+                                 <include>*Test*.java</include>
                             </includes>
                             <!-- needed for jacoco to integrate properly -->
                             <argLine>${argLine}</argLine>
