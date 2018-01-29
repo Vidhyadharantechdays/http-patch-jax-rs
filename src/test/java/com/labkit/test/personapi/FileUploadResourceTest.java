@@ -48,10 +48,21 @@ public class FileUploadResourceTest {
         FileUploadResource fUpload = new FileUploadResource();
         URL resourceURL = FileUploadResourceTest.class.getResource("upload-test-sample.txt");
         File file = new File(resourceURL.toURI());
-        Response postOctetStream = fUpload.postOctetStream(new FileInputStream (file));
-       Integer fileSize = (Integer) postOctetStream.getEntity();
-        Assert.assertThat("Verify the response bytes ", fileSize, is(equalTo(fileSize)));
-        
+        Response postOctetStream = fUpload.postOctetStream(new FileInputStream(file));
+        Integer fileSize = (Integer) postOctetStream.getEntity();
+        Assert.assertThat("Verify the response bytes ", 30, is(equalTo(fileSize)));
+    }
+
+    @Test
+    public void testFileImgUpload() throws FileNotFoundException, URISyntaxException {
+
+        FileUploadResource fUpload = new FileUploadResource();
+        URL resourceURL = FileUploadResourceTest.class.getResource("image-png-sample.png");
+        File file = new File(resourceURL.toURI());
+        Response postOctetStream = fUpload.postImageFile(file);
+        Integer fileSize = (Integer) postOctetStream.getEntity();
+        Assert.assertThat("Verify the image file size ", 530, is(equalTo(fileSize)));
+
     }
 
 }
