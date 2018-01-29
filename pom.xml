@@ -236,6 +236,8 @@
                             <includes>
                                 <include>com\labkit\test\personapi\PersonAPITestRunner.java</include>
                                 <include>com\labkit\test\personapi\PersonTest.java</include>
+                                <include>com\labkit\test\personapi\ApiUsecaseTest.java</include>
+                                <include>com\labkit\test\personapi\FileUploadResourceTest.java</include>
                             </includes>
                             <!-- needed for jacoco to integrate properly -->
                             <argLine>${argLine}</argLine>
