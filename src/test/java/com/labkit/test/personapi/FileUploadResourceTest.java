@@ -23,6 +23,14 @@
  */
 package com.labkit.test.personapi;
 
+import com.vidhya.java.http.jax.rs.fileupload.FileUploadResource;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import javax.ws.rs.core.Response;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -32,8 +40,17 @@ import org.junit.Test;
 public class FileUploadResourceTest {
 
     @Test
-    public void testFileUpload() {
+    public void testFileUpload() throws FileNotFoundException {
 
+        FileUploadResource fUpload = new FileUploadResource();
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("upload-test-sample.txt").getFile());
+        Response postOctetStream = fUpload.postOctetStream(new FileInputStream (file));
+        String readEntity = postOctetStream.readEntity(String.class);
+        
+        Assert.assertThat("Verify the response bytes ", "30", is(equalTo(readEntity)));
+        
     }
 
 }
