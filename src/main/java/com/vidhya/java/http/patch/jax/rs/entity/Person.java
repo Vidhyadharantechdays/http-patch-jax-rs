@@ -23,7 +23,6 @@
  */
 package com.vidhya.java.http.patch.jax.rs.entity;
 
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -32,11 +31,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Vidhyadharan Deivamani < it.vidhyadharan@gmail.com >
  */
 @XmlRootElement
-public class Person {    
-    
-    
-    private String name;        
-    private Integer age;  
+public class Person {
+
+    private String name;
+    private Integer age;
     private String locale;
 //    @NotNull
 //    @Pattern(regexp="@([A-Za-z0-9_]{1,15})", message="Invalid twitter ID, Should start with @ ,and Alpha numeric and _ underscore")
@@ -72,7 +70,6 @@ public class Person {
         this.locale = locale;
     }
 
-
     @XmlElement
     public String getTwitter() {
         return twitter;
@@ -89,6 +86,11 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean matchesAnyFileds(String searchTerm) {
+        String personAsString = " " + name + " " + age + " " + locale + " " + twitter + " " + email;
+        return personAsString.contains(searchTerm);
     }
 
     @Override
@@ -137,7 +139,4 @@ public class Person {
         return true;
     }
 
-    
-    
-    
 }

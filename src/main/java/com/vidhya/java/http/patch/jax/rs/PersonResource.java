@@ -132,6 +132,23 @@ public class PersonResource {
         entityStorage.setPerson(person);
     }
     
+    
+    /**
+     * Search the person by all properties
+     * @param searchTerm - name , email , age, twitter or any string
+     * @return [@link  Person} or empty string
+     */
+    @Path("/v1/person/search")
+    @POST
+    @Produces({"application/json"})
+    public String searchPerson(String searchTerm) {
+        if(entityStorage.getPerson().matchesAnyFileds(searchTerm)){
+        return entityStorage.getPerson().toString();
+        }else{
+            return "";
+        }
+    }
+    
     @Path("/v1/person")
     @PATCH
     @Consumes(Patching.PATCH_MEDIA_TYPE)
