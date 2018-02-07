@@ -112,4 +112,14 @@ public class PersonTest {
         Assert.assertThat("Default person ", defaultPerson, is(p));
     }
     
+    @Test
+    public void testSearchPerson(){
+        
+        Person defaultPerson = PersonUtil.getDefaultPerson();
+        
+        Assert.assertThat("Search with name", true, is(defaultPerson.matchesAnyFileds("vidhya")));
+        Assert.assertThat("Search with twitter", true, is(defaultPerson.matchesAnyFileds("vidhya03")));
+        
+        
+    }
 }
