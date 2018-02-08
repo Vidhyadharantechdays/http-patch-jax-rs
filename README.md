@@ -29,7 +29,7 @@ A simple HTTP REST service  web application also called as Person API
 ```
 - To run test against local deployment
 ```
-  mvn test -dkarate.env=dev
+  mvn test -Dkarate.env=dev
 ```
 and the HTML reports would be output to /target/surefire-reports/TEST-com.labkit.test.personapi.PersonApi.html 
 ![karate test Report](src/test/resources/karate-rest-api-test-reports.png) 
