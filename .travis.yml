@@ -1,7 +1,6 @@
 language: java
 sudo: false
 script: mvn clean verify
-script: mvn Test -DskipTests=false
 script: mvn cobertura:cobertura
 
 after_success:
