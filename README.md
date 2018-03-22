@@ -21,7 +21,27 @@ A simple HTTP REST service  web application also called as Person API
   cd  http-patch-jax-rs.git
   mvn compile
 ```
+- Spotbugs 
+ [SpotBugs](https://spotbugs.github.io/) is a program which uses static analysis to look for bugs in Java code.
 
+  Spotbugs can be triggred via compile time.
+```
+  mvn -Pspotbugs compile
+``` 
+
+  Spotbugs can also be check by using the below command.
+```
+  mvn -Pspotbugs spotbugs:check
+```
+
+  `Debug` the spotbugs error via the following command.
+```
+  mvn -Pspotbugs spotbugs:gui
+```  
+  The above command will popup spotbugs errors in GUI like this
+  ![spotbugs error view in GUI](src/test/resources/spotbugs-viewer-gui.png)
+  
+ 
 # Rest API testing using karate
 - To run test against production
 ```
@@ -53,3 +73,6 @@ and the HTML reports would be output to target/site/jacoco/index.html
 
 # Credits
 - [@vidhya03](https://github.com/vidhya03) : The Enthusiastic
+
+
+
