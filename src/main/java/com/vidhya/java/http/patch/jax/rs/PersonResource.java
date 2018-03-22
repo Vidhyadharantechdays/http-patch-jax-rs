@@ -141,11 +141,11 @@ public class PersonResource {
     @Path("/v1/person/search")
     @POST
     @Produces({"application/json"})
-    public String searchPerson(String searchTerm) {
+    public Person searchPerson(String searchTerm) {
         if(entityStorage.getPerson().matchesAnyFileds(searchTerm)){
-        return entityStorage.getPerson().toString();
+        return entityStorage.getPerson();
         }else{
-            return "";
+            return new Person();
         }
     }
     

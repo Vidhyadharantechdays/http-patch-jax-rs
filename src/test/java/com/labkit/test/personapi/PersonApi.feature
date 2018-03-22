@@ -14,6 +14,22 @@ Background:
     When method GET
     Then status 200
     And match response == {"name":"Vidhya","age":29,"locale":"en","twitter":"VidhyaJava","email":"it.vidhyadharan@gmail.com"}
+  Scenario: Test for Search person
+    Given path 'person/search'
+    And request "vidhya"
+    And header Accept = 'application/json'   
+    When method post
+    #And header Content-Type = 'application/json'        
+    Then status 200
+    And match response == {"name":"Vidhya","age":29,"locale":"en","twitter":"VidhyaJava","email":"it.vidhyadharan@gmail.com"}
+  Scenario: Test for Search person
+    Given path 'person/search'
+    And request "vidhya"
+    And header Accept = 'application/json'   
+    When method post
+    #And header Content-Type = 'application/json'        
+    Then status 200
+    And match response == {"name":"Vidhya","age":29,"locale":"en","twitter":"VidhyaJava","email":"it.vidhyadharan@gmail.com"}
   Scenario: Test for POST person
     Given path 'person'
     And request {"name":"Vidhya","age":29,"locale":"en","twitter":"VidhyaJava","email":"it.vidhyadharan@gmail.com"}
@@ -28,4 +44,5 @@ Background:
     And header Accept = 'application/json' 
     When method patch       
     Then status 200
+
 

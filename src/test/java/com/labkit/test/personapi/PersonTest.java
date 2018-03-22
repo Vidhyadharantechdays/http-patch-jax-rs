@@ -98,10 +98,9 @@ public class PersonTest {
         Assert.assertFalse("Person x p to vidhya v ", x.equals(v));
         Assert.assertFalse("Vidhya v to Person x", v.equals(x));
     }
-    
-    
+
     @Test
-    public void testPersonUtil(){
+    public void testPersonUtil() {
         Person defaultPerson = PersonUtil.getDefaultPerson();
         Person p = new Person();
         p.setName("Vidhya");
@@ -111,5 +110,11 @@ public class PersonTest {
         p.setEmail("it.vidhyadharan@gmail.com");
         Assert.assertThat("Default person ", defaultPerson, is(p));
     }
-    
+
+    @Test
+    public void testSearchPerson() {
+        Person defaultPerson = PersonUtil.getDefaultPerson();
+        Assert.assertThat("Search with name", true, is(defaultPerson.matchesAnyFileds("vidhya")));
+        Assert.assertThat("Search with twitter", true, is(defaultPerson.matchesAnyFileds("vidhya03")));
+    }
 }
