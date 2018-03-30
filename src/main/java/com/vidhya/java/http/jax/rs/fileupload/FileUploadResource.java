@@ -74,7 +74,7 @@ public class FileUploadResource {
     @Produces(MediaType.TEXT_PLAIN)
     public Response postImageFile(File file) {
         LOGGER.log(Level.INFO, "The endpoint  is /v1/upload/png");
-        try (Reader reader = new InputStreamReader (new FileInputStream(file))) {
+        try (Reader reader = new InputStreamReader (new FileInputStream(file),Charset.defaultCharset())) {
             int totalsize = 0;
             int count = 0;
             final char[] buffer = new char[256];
