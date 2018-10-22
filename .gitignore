@@ -1,3 +1,5 @@
 /target/
 /src/main/java/com/vidhya/java/http/jax/rs/fileupload/Debug.java
 /deployments/ROOT.war
+/.classpath
+/.project
