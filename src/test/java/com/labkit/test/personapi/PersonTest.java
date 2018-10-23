@@ -28,6 +28,9 @@ import com.vidhya.java.http.patch.jax.rs.entity.PersonUtil;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
+
+import javax.validation.constraints.AssertFalse;
+
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -39,6 +42,7 @@ import org.junit.Test;
 public class PersonTest {
 
     static Person vidhya = null;
+    PersonUtil pu = new PersonUtil();
 
     @BeforeClass
     public static void intialize() {
@@ -116,5 +120,39 @@ public class PersonTest {
         Person defaultPerson = PersonUtil.getDefaultPerson();
         Assert.assertThat("Search with name", true, is(defaultPerson.matchesAnyFileds("vidhya")));
         Assert.assertThat("Search with twitter", true, is(defaultPerson.matchesAnyFileds("vidhya03")));
+    }
+    
+    @Test
+    public void equalsNameTest(){
+    	Person p = new Person();
+    	p.setName(null);
+        p.setAge(29);
+        p.setLocale("en");
+        p.setTwitter("vidhya03");
+        p.setEmail("it.vidhyadharan@gmail.com");
+        vidhya.setName("Sameer");
+        boolean res = p.equals(vidhya);
+    }
+    
+    @Test
+    public void equalsEmailTest(){
+    	Person p = new Person();
+    	p.setName("Sameer");
+        p.setAge(29);
+        p.setLocale("en");
+        p.setTwitter("vidhya03");
+        p.setEmail(null);
+        boolean res = p.equals(vidhya);
+    }
+    
+    @Test
+    public void equalsLocaleTest(){
+    	Person p = new Person();
+    	p.setName("Sameer");
+        p.setAge(29);
+        p.setLocale(null);
+        p.setTwitter("vidhya03");
+        p.setEmail("it.vidhyadharan@gmail.com");
+        boolean res = p.equals(vidhya);
     }
 }

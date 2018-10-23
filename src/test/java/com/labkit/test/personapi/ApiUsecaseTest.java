@@ -21,18 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.labkit.test.personapi;
+/*package com.labkit.test.personapi;
 
 import com.intuit.karate.junit4.Karate;
 import cucumber.api.CucumberOptions;
 import org.junit.runner.RunWith;
-
+*/
 /**
  *
  * @author vidhya (it.vidhyadharan@gmail.com)
  */
-@RunWith(Karate.class)
+/*@RunWith(Karate.class)
 @CucumberOptions(features = "classpath:com/labkit/test/personapi/ApiResouce.feature")
 public class ApiUsecaseTest {
     
-}
+}*/
